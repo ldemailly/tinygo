@@ -10,7 +10,7 @@ import (
 // Version of TinyGo.
 // Update this value before release of new version of software.
 // TODO: this should be $(git describe --tags --always)
-const version = "0.32.0+grol-1"
+const version = "0.32.0+grol-2"
 
 var (
 	// This variable is set at build time using -ldflags parameters.
