@@ -300,7 +300,7 @@
 					"syscall/js.finalizeRef": (v_ref) => {
 						// Note: TinyGo does not support finalizers so this is only called
 						// for one specific case, by js.go:jsString. and can/might leak memory.
-						const id = mem().getUint32(unboxValue(v_ref), true);
+						const id = v_ref & 0xffffffffn;
 						// Note that this if is so far seemingly never true. Someone should investigate why.
 						if (this._goRefCounts?.[id] !== undefined) {
 							this._goRefCounts[id]--;
